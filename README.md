@@ -15,6 +15,11 @@ To use this project, you need to install the [TotalSegmentation](https://github.
 
 You can run the `main.py` script to generate masks from CT data:
 
+## License
+
+This project uses the [TotalSegmentator](https://github.com/wasserth/TotalSegmentator) library, which is licensed under the Apache-2.0 License.
+
+Directory structure
 ```bash
 python main.py --data_dir /path/to/your/data
 
@@ -31,6 +36,4 @@ python main.py --data_dir /path/to/your/data
         └── ct.nii.gz
 
 
-## License
 
-This project uses the [TotalSegmentator](https://github.com/wasserth/TotalSegmentator) library, which is licensed under the Apache-2.0 License.
