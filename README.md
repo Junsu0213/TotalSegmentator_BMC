@@ -34,6 +34,3 @@ python main.py --data_dir /path/to/your/data
         └── ct.nii.gz
     └── modality2/
         └── ct.nii.gz
-
-
-
