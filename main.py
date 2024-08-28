@@ -55,11 +55,14 @@ def main(database_dir):
             input_path = os.path.join(sub_path, file_name, f'{file_name}.nii.gz')
             output_path = os.path.join(sub_path, file_name, f'{file_name}_mask.nii.gz')
             output_dir = os.path.join(sub_path, file_name)
-
-            print(f'Starting mask generation for subject: {sub}, file: {file_name}')
-            create_multiple_labels_for_nii(input_path, output_path)
-            create_single_label_for_nii(input_path, output_dir)
-            print(f'Completed mask generation for subject: {sub}, file: {file_name}\n')
+            try:
+                print(f'Starting mask generation for subject: {sub}, file: {file_name}')
+                create_multiple_labels_for_nii(input_path, output_path)
+                create_single_label_for_nii(input_path, output_dir)
+                print(f'Completed mask generation for subject: {sub}, file: {file_name}\n')
+            except Exception as e:
+                print(e)
+                pass
 
 
 if __name__ == '__main__':
