@@ -6,6 +6,7 @@ Created on Wed. Aug. 28 13:46:30 2024
 import os
 from totalsegmentator.python_api import totalsegmentator
 
+
 # Option 1: Process all ROIs at once (may cause memory issues with multiple ROIs)
 def create_multiple_labels_for_nii(input_path, output_path, roi_subset=None):
     """
@@ -17,7 +18,7 @@ def create_multiple_labels_for_nii(input_path, output_path, roi_subset=None):
         roi_subset (list of str): List of ROIs to process. Default is ['spleen', 'pancreas', 'liver'].
     """
     if roi_subset is None:
-        roi_subset = ['spleen', 'pancreas', 'liver', 'kidney_left', 'kidney_right']
+        roi_subset = ['spleen', 'liver']
     print(f"Processing all ROIs at once: {', '.join(roi_subset)}")
     totalsegmentator(input_path, output_path, roi_subset=roi_subset, ml=True)
     print(f"Finished processing all ROIs. Output saved to {output_path}")
@@ -34,7 +35,7 @@ def create_single_label_for_nii(input_path, output_dir, roi_subset=None):
         roi_subset (list of str): List of ROIs to process. Default is ['spleen', 'pancreas', 'liver'].
     """
     if roi_subset is None:
-        roi_subset = ['spleen', 'pancreas', 'liver', 'kidney_left', 'kidney_right']
+        roi_subset = ['spleen', 'liver']
     for roi in roi_subset:
         print(f"Processing {roi} ROI...")
         totalsegmentator(input_path, output_dir, roi_subset=[roi])
